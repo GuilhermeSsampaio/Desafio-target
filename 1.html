@@ -1,0 +1,37 @@
+<script>
+  //   // 1) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor
+  // sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13,
+  // 21, 34...), escreva um programa na linguagem que desejar onde, informado um
+  // número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se
+  // o número informado pertence ou não a sequência.
+  function fibo() {
+    let i,
+      soma,
+      num,
+      seq = [];
+    flag = false;
+
+    num = +prompt("Insira o número para calcular FIB: ");
+    for (i = 0; i < num; i++) {
+      if (i == 0) seq[i] = 0;
+      else if (i == 1) seq[i] = 1;
+      else seq[i] = seq[i - 1] + seq[i - 2];
+
+      document.write(seq[i] + " ");
+    }
+    for (i = 0; i < num; i++) {
+      if (num == seq[i]) flag = true;
+    }
+
+    if (flag)
+      document.write(
+        " <br> O numero informado " + num + " pertence a sequência"
+      );
+    else
+      document.write(
+        "<br> O numero informado " + num + " não pertence a sequência"
+      );
+  }
+
+  fibo();
+</script>
